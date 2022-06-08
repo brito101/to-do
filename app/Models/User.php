@@ -50,4 +50,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /** Relationships */
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
