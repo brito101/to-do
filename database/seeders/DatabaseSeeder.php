@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +23,8 @@ class DatabaseSeeder extends Seeder
             RolesHasPermissionTableSeeder::class,
             ModelHasRoleTableSeeder::class,
         ]);
+
+        Category::factory(5)->create();
+        Task::factory(5)->create();
     }
 }
