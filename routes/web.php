@@ -53,3 +53,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::fallback(function () {
+    return view('404');
+});
