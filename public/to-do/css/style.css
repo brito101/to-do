@@ -1,0 +1,138 @@
+:root {
+  --bg-light: #f0f2fa;
+  --bg-white: #f6f5ff;
+  --text-dark: #0a0040;
+  --color-primary: #6143ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.btn.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-white);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 100px;
+  background-color: var(--color-primary);
+}
+
+.content nav {
+  height: 100px;
+  background-color: var(--bg-light);
+  width: calc(100vw - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.content main {
+  display: flex;
+  padding: 20px;
+}
+.content main .graph {
+  width: 33%;
+  padding: 5px;
+}
+.content main .graph .graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content main .graph .graph-header h2 {
+  display: inline-block;
+}
+.content main .graph .graph-header hr {
+  width: 50px;
+  display: inline-block;
+}
+.content main .graph .graph-subtitle {
+  margin-top: 10px;
+}
+.content main .graph .graph-placeholder {
+  background-color: #ccc;
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.content main .graph .graph-text-left {
+  text-align: center;
+  margin-top: 10px;
+}
+.content main .list {
+  padding: 5px 15px;
+  flex: 1;
+}
+.content main .list .list-header {
+  display: flex;
+}
+.content main .list .task-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+.content main .list .task-list .task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 15px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid var(--bg-light);
+}
+.content main .list .task-list .task:hover {
+  background-color: var(--bg-light);
+}
+.content main .list .task-list .task .title {
+  display: flex;
+  align-items: center;
+}
+.content main .list .task-list .task .title .task-title {
+  padding-left: 10px;
+  font-weight: bold;
+}
+.content main .list .task-list .task .priority {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.content main .list .task-list .task .priority .sphere {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.content main .list .task-list .task .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.content main .list .task-list .task .title,
+.content main .list .task-list .task .priority,
+.content main .list .task-list .task .actions {
+  flex: 1;
+}

@@ -21,4 +21,6 @@ mix.js("resources/js/app.js", "public/js")
     .options({
         processCssUrls: false,
     })
+    /** To-do */
+    .sass("resources/views/to-do/assets/scss/style.scss", "public/to-do/css")
     .sourceMaps();

@@ -1,0 +1,160 @@
+:root {
+    --bg-light: #f0f2fa;
+    --bg-white: #f6f5ff;
+    --text-dark: #0a0040;
+    --color-primary: #6143ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    &.btn-primary {
+        background-color: var(--color-primary);
+        color: #fff;
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-white);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    width: 100px;
+    background-color: var(--color-primary);
+}
+
+.content {
+    nav {
+        height: 100px;
+        background-color: var(--bg-light);
+        width: calc(100vw - 100px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 20px;
+    }
+
+    main {
+        display: flex;
+        padding: 20px;
+
+        .graph {
+            width: 33%;
+            padding: 5px;
+
+            .graph-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    display: inline-block;
+                }
+
+                hr {
+                    width: 50px;
+                    display: inline-block;
+                }
+            }
+
+            .graph-subtitle {
+                margin-top: 10px;
+            }
+
+            .graph-placeholder {
+                background-color: #ccc;
+                width: 300px;
+                height: 300px;
+                margin-top: 20px;
+                margin-left: 25px;
+            }
+
+            .graph-text-left {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+
+        .list {
+            padding: 5px 15px;
+            flex: 1;
+
+            .list-header {
+                display: flex;
+            }
+
+            .task-list {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+
+                .task {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 30px 15px;
+                    margin-bottom: 10px;
+                    border-bottom: 3px solid var(--bg-light);
+
+                    &:hover {
+                        background-color: var(--bg-light);
+                    }
+
+                    .title {
+                        display: flex;
+                        align-items: center;
+
+                        .task-title {
+                            padding-left: 10px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .priority {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .sphere {
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .actions {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    .title,
+                    .priority,
+                    .actions {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}

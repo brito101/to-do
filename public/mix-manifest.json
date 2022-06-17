@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/to-do/css/style.css": "/to-do/css/style.css",
     "/img/favicon.svg": "/img/favicon.svg",
     "/js/company.js": "/js/company.js",
     "/js/address.js": "/js/address.js",

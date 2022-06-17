@@ -48,8 +48,10 @@ Route::group(['middleware' => ['auth']], function () {
 /** Web */
 /** Home */
 // Route::get('/', [SiteController::class, 'index'])->name('home');
+
+/** To-do */
 Route::get('/', function () {
-    return redirect('admin');
+    return view('to-do.master.master');
 });
 
 Auth::routes();
