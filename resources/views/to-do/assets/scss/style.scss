@@ -17,6 +17,11 @@
 .btn {
     padding: 10px 20px;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &.btn-primary {
         background-color: var(--color-primary);
@@ -39,6 +44,10 @@ body {
 .sidebar {
     width: 100px;
     background-color: var(--color-primary);
+
+    img {
+        max-width: 100%;
+    }
 }
 
 .content {
@@ -54,11 +63,11 @@ body {
 
     main {
         display: flex;
-        padding: 20px;
+        padding: 0;
 
         .graph {
             width: 33%;
-            padding: 5px;
+            padding: 20px 20px 0 20px;
 
             .graph-header {
                 display: flex;
@@ -67,11 +76,20 @@ body {
 
                 h2 {
                     display: inline-block;
+                    font-size: 18px;
                 }
 
-                hr {
-                    width: 50px;
-                    display: inline-block;
+                .graph-header-line {
+                    width: 100px;
+                    min-width: 100px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    height: 2px;
+                }
+
+                .graph-header-date {
+                    font-size: 9px;
+                    display: flex;
+                    align-items: center;
                 }
             }
 
@@ -80,25 +98,37 @@ body {
             }
 
             .graph-placeholder {
-                background-color: #ccc;
+                margin-top: 50px;
                 width: 300px;
                 height: 300px;
                 margin-top: 20px;
                 margin-left: 25px;
+                background: url("../img/graph.png");
+                background-size: contain;
             }
 
             .graph-text-left {
-                text-align: center;
-                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin-top: 50px;
             }
         }
 
         .list {
-            padding: 5px 15px;
+            padding: 20px 20px 0 20px;
             flex: 1;
 
             .list-header {
                 display: flex;
+
+                .list-header-select {
+                    background-color: transparent;
+                    border: 0;
+                    font-size: 18px;
+                    color: var(--text-dark);
+                }
             }
 
             .task-list {
@@ -115,9 +145,13 @@ body {
                     padding: 30px 15px;
                     margin-bottom: 10px;
                     border-bottom: 3px solid var(--bg-light);
+                    transition: all 0.3s ease-in-out;
 
                     &:hover {
                         background-color: var(--bg-light);
+                        transform: scale(1.05);
+                        border-radius: 4px;
+                        overflow-x: hidden;
                     }
 
                     .title {
@@ -146,6 +180,16 @@ body {
                     .actions {
                         display: flex;
                         justify-content: flex-end;
+
+                        a {
+                            margin-left: 20px;
+                            margin-right: 10px;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                transform: scale(1.5);
+                            }
+                        }
                     }
 
                     .title,

@@ -17,6 +17,10 @@
 .btn {
   padding: 10px 20px;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.05);
 }
 .btn.btn-primary {
   background-color: var(--color-primary);
@@ -39,6 +43,9 @@ body {
   width: 100px;
   background-color: var(--color-primary);
 }
+.sidebar img {
+  max-width: 100%;
+}
 
 .content nav {
   height: 100px;
@@ -51,11 +58,11 @@ body {
 }
 .content main {
   display: flex;
-  padding: 20px;
+  padding: 0;
 }
 .content main .graph {
   width: 33%;
-  padding: 5px;
+  padding: 20px 20px 0 20px;
 }
 .content main .graph .graph-header {
   display: flex;
@@ -64,31 +71,50 @@ body {
 }
 .content main .graph .graph-header h2 {
   display: inline-block;
+  font-size: 18px;
 }
-.content main .graph .graph-header hr {
-  width: 50px;
-  display: inline-block;
+.content main .graph .graph-header .graph-header-line {
+  width: 100px;
+  min-width: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 2px;
+}
+.content main .graph .graph-header .graph-header-date {
+  font-size: 9px;
+  display: flex;
+  align-items: center;
 }
 .content main .graph .graph-subtitle {
   margin-top: 10px;
 }
 .content main .graph .graph-placeholder {
-  background-color: #ccc;
+  margin-top: 50px;
   width: 300px;
   height: 300px;
   margin-top: 20px;
   margin-left: 25px;
+  background: url("../img/graph.png");
+  background-size: contain;
 }
 .content main .graph .graph-text-left {
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 .content main .list {
-  padding: 5px 15px;
+  padding: 20px 20px 0 20px;
   flex: 1;
 }
 .content main .list .list-header {
   display: flex;
+}
+.content main .list .list-header .list-header-select {
+  background-color: transparent;
+  border: 0;
+  font-size: 18px;
+  color: var(--text-dark);
 }
 .content main .list .task-list {
   display: flex;
@@ -104,9 +130,13 @@ body {
   padding: 30px 15px;
   margin-bottom: 10px;
   border-bottom: 3px solid var(--bg-light);
+  transition: all 0.3s ease-in-out;
 }
 .content main .list .task-list .task:hover {
   background-color: var(--bg-light);
+  transform: scale(1.05);
+  border-radius: 4px;
+  overflow-x: hidden;
 }
 .content main .list .task-list .task .title {
   display: flex;
@@ -130,6 +160,14 @@ body {
 .content main .list .task-list .task .actions {
   display: flex;
   justify-content: flex-end;
+}
+.content main .list .task-list .task .actions a {
+  margin-left: 20px;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.content main .list .task-list .task .actions a:hover {
+  transform: scale(1.5);
 }
 .content main .list .task-list .task .title,
 .content main .list .task-list .task .priority,

@@ -14,18 +14,26 @@
 
 <body>
     <div class="container">
-        <div class="sidebar">Logo</div>
+        <div class="sidebar"><img src="{{ asset('to-do/img/logo.png') }}" alt="Logo"></div>
         <div class="content">
             <nav><a href="#" class="btn btn-primary" title="Criar Tarefa">Criar Tarefa</a></nav>
             <main>
                 <section class="graph">
                     <div class="graph-header">
                         <h2>Progresso do dia</h2>
-                        Data
+                        <div class="graph-header-line"></div>
+                        <div class="graph-header-date">
+                            <img src="{{ asset('to-do/img/icon-prev.png') }}" alt="">
+                            13 Dez 2022
+                            <img src="{{ asset('to-do/img/icon-next.png') }}" alt="">
+                        </div>
                     </div>
                     <div class="graph-subtitle">Tarefas <b>3/6</b></div>
                     <div class="graph-placeholder"></div>
-                    <p class="graph-text-left">Restam 3 tarefas a serem realizadas</p>
+                    <div class="graph-text-left">
+                        <img src="{{ asset('to-do/img/icon-info.png') }}" alt="">
+                        Restam 3 tarefas a serem realizadas
+                    </div>
                 </section>
                 <section class="list">
                     <div class="list-header">
@@ -44,23 +52,10 @@
                                 <div>Prioridade</div>
                             </div>
                             <div class="actions">
-                                <a href="#" title="Editar">Editar</a>
-                                <a href="#" title="Excluir">Excluir</a>
-                            </div>
-                        </div>
-
-                        <div class="task">
-                            <div class="title">
-                                <input type="checkbox" />
-                                <div class="task-title">Título da Tarefa</div>
-                            </div>
-                            <div class="priority">
-                                <div class="sphere"></div>
-                                <div>Prioridade</div>
-                            </div>
-                            <div class="actions">
-                                <a href="#" title="Editar">Editar</a>
-                                <a href="#" title="Excluir">Excluir</a>
+                                <a href="#" title="Editar"><img src="{{ asset('to-do/img/icon-edit.png') }}"
+                                        alt="Editar"></a>
+                                <a href="#" title="Excluir"><img src="{{ asset('to-do/img/icon-delete.png') }}"
+                                        alt="Excluir"></a>
                             </div>
                         </div>
                     </div>

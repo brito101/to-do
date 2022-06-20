@@ -23,4 +23,5 @@ mix.js("resources/js/app.js", "public/js")
     })
     /** To-do */
     .sass("resources/views/to-do/assets/scss/style.scss", "public/to-do/css")
+    .copy("resources/views/to-do/assets/img", "public/to-do/img")
     .sourceMaps();

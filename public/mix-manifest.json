@@ -5,5 +5,14 @@
     "/img/favicon.svg": "/img/favicon.svg",
     "/js/company.js": "/js/company.js",
     "/js/address.js": "/js/address.js",
-    "/js/phone.js": "/js/phone.js"
+    "/js/phone.js": "/js/phone.js",
+    "/to-do/img/graph.png": "/to-do/img/graph.png",
+    "/to-do/img/icon-delete.png": "/to-do/img/icon-delete.png",
+    "/to-do/img/icon-edit.png": "/to-do/img/icon-edit.png",
+    "/to-do/img/icon-info.png": "/to-do/img/icon-info.png",
+    "/to-do/img/icon-next.png": "/to-do/img/icon-next.png",
+    "/to-do/img/icon-prev.png": "/to-do/img/icon-prev.png",
+    "/to-do/img/line-dark.png": "/to-do/img/line-dark.png",
+    "/to-do/img/line.png": "/to-do/img/line.png",
+    "/to-do/img/logo.png": "/to-do/img/logo.png"
 }
