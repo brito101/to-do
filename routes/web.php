@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\ACL\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\Todo\HomeController;
+use App\Http\Controllers\Todo\TaskController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,16 +45,18 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('role/{role}/permission/sync', [RoleController::class, 'permissionsSync'])->name('role.permissionsSync');
         Route::resource('role', RoleController::class);
     });
+
+    /** To Do */
+    Route::prefix('todo')->name('todo.')->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::get('/task/destroy/{id}', [TaskController::class, 'destroy'])->name('task.delete');
+        Route::resource('task', TaskController::class);
+    });
 });
 
 /** Web */
 /** Home */
 // Route::get('/', [SiteController::class, 'index'])->name('home');
-
-/** To-do */
-Route::get('/', function () {
-    return view('to-do.master.master');
-});
 
 Auth::routes();
 

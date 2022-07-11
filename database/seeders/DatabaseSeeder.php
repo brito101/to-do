@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             ModelHasRoleTableSeeder::class,
         ]);
 
-        Category::factory(5)->create();
-        Task::factory(5)->create();
+        Category::factory(50)->create();
+        Task::factory(50)->create();
     }
 }
