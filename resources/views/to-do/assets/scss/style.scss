@@ -18,6 +18,10 @@
     padding: 10px 20px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    font-size: 1rem;
 
     &:hover {
         transform: scale(1.05);
@@ -51,6 +55,8 @@ body {
 }
 
 .content {
+    overflow-x: hidden;
+
     nav {
         height: 100px;
         background-color: var(--bg-light);
@@ -200,6 +206,64 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+#create_task_section {
+    margin: auto;
+    padding-top: 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input_area {
+        display: block;
+        margin: 10px 0 20px 0;
+
+        & > label {
+            display: block;
+            margin-bottom: 5px;
+            margin-left: 5px;
+        }
+
+        & > input,
+        & > select,
+        & > textarea {
+            width: 400px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 0.825rem;
+            background-color: rgba($color: #fff, $alpha: 0.5);
+
+            &::placeholder {
+                /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: var(--text-dark);
+                opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: var(--text-dark);
+            }
+
+            &::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: var(--text-dark);
+            }
+        }
+
+        & > input,
+        & > select,
+        & > textarea {
+            height: 40px;
+        }
+
+        & > textarea {
+            height: 120px;
         }
     }
 }

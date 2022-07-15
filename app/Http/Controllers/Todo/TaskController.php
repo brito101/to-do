@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Todo;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -23,7 +26,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('to-do.tasks.create');
+        $categories = Category::all();
+        return view('to-do.tasks.create', compact('categories'));
     }
 
     /**
@@ -34,7 +38,10 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $task = Task::create($data);
+        return redirect()->route('todo.home');
     }
 
     /**
