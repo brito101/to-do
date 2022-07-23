@@ -3,22 +3,23 @@
 @section('title', 'Criar Tarefa')
 
 @section('btn')
-    <a href="{{ route('todo.home') }}" class="btn btn-primary" title="Criar Tarefa">Home</a>
+    <a href="{{ route('todo.home') }}" class="btn btn-primary" title="Home">Home</a>
 @endsection
 
 @section('content')
-    <section id='create_task_section'>
+    <section id='task_section'>
         <h2>Criar Tarefa</h2>
         <form action="{{ route('todo.task.store') }}" method="POST">
             @csrf
             <div class="input_area">
                 <label for="title">Título da Tarefa</label>
-                <input type="text" name="title" id="title" placeholder="Digite o título da tarefa" required>
+                <input type="text" name="title" id="title" placeholder="Digite o título da tarefa" required
+                    value="{{ old('title') }}">
             </div>
 
             <div class="input_area">
                 <label for="due_date">Data de Realização da Tarefa</label>
-                <input type="date" id="due_date" name="due_date" required>
+                <input type="datetime-local" id="due_date" name="due_date" required value="{{ old('due_date') }}">
             </div>
 
             <div class="input_area">
@@ -26,14 +27,15 @@
                 <select name="category_id" id="category_id" required>
                     <option selected disabled value="">Selecione uma Categoria</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                            {{ $category->title }}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="input_area">
                 <label for="description">Descrição da Tarefa</label>
-                <textarea name="description" id="description" placeholder="Digite a descrição para a sua tarefa"></textarea>
+                <textarea name="description" id="description" placeholder="Digite a descrição para a sua tarefa">{{ old('description') }}</textarea>
             </div>
 
             <div class="input_area">

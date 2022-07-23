@@ -183,24 +183,24 @@ body {
   flex: 1;
 }
 
-#create_task_section {
+#task_section {
   margin: auto;
   padding-top: 20px;
 }
-#create_task_section h2 {
+#task_section h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-#create_task_section .input_area {
+#task_section .input_area {
   display: block;
   margin: 10px 0 20px 0;
 }
-#create_task_section .input_area > label {
+#task_section .input_area > label {
   display: block;
   margin-bottom: 5px;
   margin-left: 5px;
 }
-#create_task_section .input_area > input, #create_task_section .input_area > select, #create_task_section .input_area > textarea {
+#task_section .input_area > input, #task_section .input_area > select, #task_section .input_area > textarea {
   width: 400px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -208,35 +208,35 @@ body {
   font-size: 0.825rem;
   background-color: rgba(255, 255, 255, 0.5);
 }
-#create_task_section .input_area > input::-moz-placeholder, #create_task_section .input_area > select::-moz-placeholder, #create_task_section .input_area > textarea::-moz-placeholder {
+#task_section .input_area > input::-moz-placeholder, #task_section .input_area > select::-moz-placeholder, #task_section .input_area > textarea::-moz-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--text-dark);
   opacity: 1;
   /* Firefox */
 }
-#create_task_section .input_area > input:-ms-input-placeholder, #create_task_section .input_area > select:-ms-input-placeholder, #create_task_section .input_area > textarea:-ms-input-placeholder {
+#task_section .input_area > input:-ms-input-placeholder, #task_section .input_area > select:-ms-input-placeholder, #task_section .input_area > textarea:-ms-input-placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--text-dark);
   opacity: 1;
   /* Firefox */
 }
-#create_task_section .input_area > input::placeholder, #create_task_section .input_area > select::placeholder, #create_task_section .input_area > textarea::placeholder {
+#task_section .input_area > input::placeholder, #task_section .input_area > select::placeholder, #task_section .input_area > textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--text-dark);
   opacity: 1;
   /* Firefox */
 }
-#create_task_section .input_area > input:-ms-input-placeholder, #create_task_section .input_area > select:-ms-input-placeholder, #create_task_section .input_area > textarea:-ms-input-placeholder {
+#task_section .input_area > input:-ms-input-placeholder, #task_section .input_area > select:-ms-input-placeholder, #task_section .input_area > textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: var(--text-dark);
 }
-#create_task_section .input_area > input::-ms-input-placeholder, #create_task_section .input_area > select::-ms-input-placeholder, #create_task_section .input_area > textarea::-ms-input-placeholder {
+#task_section .input_area > input::-ms-input-placeholder, #task_section .input_area > select::-ms-input-placeholder, #task_section .input_area > textarea::-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--text-dark);
 }
-#create_task_section .input_area > input, #create_task_section .input_area > select, #create_task_section .input_area > textarea {
+#task_section .input_area > input, #task_section .input_area > select, #task_section .input_area > textarea {
   height: 40px;
 }
-#create_task_section .input_area > textarea {
+#task_section .input_area > textarea {
   height: 120px;
 }

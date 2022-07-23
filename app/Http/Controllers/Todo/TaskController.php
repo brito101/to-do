@@ -39,6 +39,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['done'] = $request->done ? true : false;
         $data['user_id'] = Auth::user()->id;
         $task = Task::create($data);
         return redirect()->route('todo.home');
@@ -63,7 +64,14 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+
+        if (!$task) {
+            abort(403, 'Acesso não autorizado');
+        }
+
+        $categories = Category::all();
+        return view('to-do.tasks.edit', compact('task', 'categories'));
     }
 
     /**
@@ -75,7 +83,15 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['done'] = $request->done ? true : false;
+        $task = Task::where('id', $id)->where('user_id', Auth::user()->id)->first();
+        if (!$task) {
+            abort(403, 'Acesso não autorizado');
+        }
+
+        $task->update($data);
+        return redirect()->route('todo.home');
     }
 
     /**
@@ -86,6 +102,12 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::where('id', $id)->where('user_id', Auth::user()->id)->first();
+        if (!$task) {
+            abort(403, 'Acesso não autorizado');
+        }
+
+        $task->delete();
+        return redirect()->route('todo.home');
     }
 }
