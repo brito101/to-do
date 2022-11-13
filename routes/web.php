@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\ACL\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\SiteController;
-use App\Http\Controllers\Todo\HomeController;
 use App\Http\Controllers\Todo\TaskController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -48,7 +47,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     /** To Do */
     Route::prefix('todo')->name('todo.')->group(function () {
-        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::get('/', [TaskController::class, 'index'])->name('home');
+        Route::post('/task/update-status', [TaskController::class, 'updateStatus'])->name('task.updateStatus');
         Route::get('/task/destroy/{id}', [TaskController::class, 'destroy'])->name('task.delete');
         Route::resource('task', TaskController::class);
     });

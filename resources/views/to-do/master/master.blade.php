@@ -24,6 +24,8 @@
             </main>
         </div>
     </div>
+
+    @yield('todo_js')
 </body>
 
 </html>

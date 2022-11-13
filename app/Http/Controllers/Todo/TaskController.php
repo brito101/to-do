@@ -15,8 +15,22 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $date = date('Y-m-d');
+        if ($request->date) {
+            $date = $request->date;
+        }
+
+        $day = date('d/m/Y', strtotime($date));
+        $dayPrev = date('Y-m-d', strtotime($date . '- 1day'));
+        $dayAfter = date('Y-m-d', strtotime($date . '+ 1day'));
+
+        $tasks = Task::where('user_id', Auth::user()->id)
+            ->whereDate('due_date', $date)
+            ->with('category')
+            ->get();
+        return view('to-do.home.index', compact('tasks', 'day', 'dayPrev', 'dayAfter'));
     }
 
     /**
@@ -109,5 +123,17 @@ class TaskController extends Controller
 
         $task->delete();
         return redirect()->route('todo.home');
+    }
+
+    public function updateStatus(Request $request)
+    {
+        $task = Task::find($request->id);
+        if ($task) {
+            $task->done = $request->status;
+            $task->save();
+            return \response()->json(['success' => true]);
+        } else {
+            return \response()->json(['success' => false]);
+        }
     }
 }
