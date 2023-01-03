@@ -15,11 +15,17 @@
                 <label for="title">Título da Tarefa</label>
                 <input type="text" name="title" id="title" placeholder="Digite o título da tarefa" required
                     value="{{ old('title') }}">
+                @if ($errors->has('title'))
+                    <span class="error">{{ $errors->first('title') }}</span>
+                @endif
             </div>
 
             <div class="input_area">
                 <label for="due_date">Data de Realização da Tarefa</label>
                 <input type="datetime-local" id="due_date" name="due_date" required value="{{ old('due_date') }}">
+                @if ($errors->has('due_date'))
+                    <span class="error">{{ $errors->first('due_date') }}</span>
+                @endif
             </div>
 
             <div class="input_area">
@@ -31,11 +37,17 @@
                             {{ $category->title }}</option>
                     @endforeach
                 </select>
+                @if ($errors->has('category_id'))
+                    <span class="error">{{ $errors->first('category_id') }}</span>
+                @endif
             </div>
 
             <div class="input_area">
                 <label for="description">Descrição da Tarefa</label>
                 <textarea name="description" id="description" placeholder="Digite a descrição para a sua tarefa">{{ old('description') }}</textarea>
+                @if ($errors->has('description'))
+                    <span class="error">{{ $errors->first('description') }}</span>
+                @endif
             </div>
 
             <div class="input_area">

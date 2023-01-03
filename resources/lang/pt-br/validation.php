@@ -221,6 +221,8 @@ return [
         'end' => 'término',
         'contract' => 'regime contratual',
         'activities' => 'atividades',
+        'due_date' => 'data de realização da tarefa',
+        'category_id' => 'categoria da tarefa',
     ],
 
 ];

@@ -13,6 +13,10 @@ class AdminController extends Controller
 {
     public function index()
     {
+        if (Auth::user()->hasRole('Usuário')) {
+            return \redirect()->route('todo.home');
+        }
+
         $administrators = User::role('Administrador')->get()->count();
 
         /** Statistcs */

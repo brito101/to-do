@@ -57,6 +57,9 @@ Route::group(['middleware' => ['auth']], function () {
 /** Web */
 /** Home */
 // Route::get('/', [SiteController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return redirect()->route('admin.home');
+});
 
 Auth::routes();
 

@@ -265,5 +265,14 @@ body {
         & > textarea {
             height: 120px;
         }
+
+        & > .error {
+            display: block;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            font-size: 0.75rem;
+            color: #ff0000;
+            font-weight: bold;
+        }
     }
 }
